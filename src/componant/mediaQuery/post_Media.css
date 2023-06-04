@@ -1,0 +1,27 @@
+@media only screen and (max-width: 650px) {
+  .post_body {
+    width: 480px;
+    height: 930px;
+  }
+  .post_body #post_body_head {
+    width: 200px;
+    height: 50px;
+  }
+  .post_body #post_textarea {
+    width: 280px;
+  }
+  .post_body #post_photo {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .post_body #post_box_location {
+    width: 100px;
+    height: 20px;
+  }
+  .post_body #button #post_button {
+    width: 100px;
+    height: 50px;
+  }
+}
+
+/*# sourceMappingURL=post_MediaQuery.css.map */

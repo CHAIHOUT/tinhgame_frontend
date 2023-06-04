@@ -1,0 +1,8 @@
+#select_body{
+    width: 920px;
+    height: 750px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
