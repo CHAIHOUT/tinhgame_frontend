@@ -16,6 +16,13 @@ function Setting() {
         navigate('/');
     }
 
+    const To_Profile=()=>{
+        navigate('setting_profile');
+    }
+    const To_Password=()=>{
+        navigate('setting_pass');
+    }
+
     useEffect(()=>{
         navigate('setting_profile')
     },[])
@@ -29,11 +36,11 @@ function Setting() {
                         <a id="setting_back"><img src="../../img/arrow.png" /></a>
                         <p id="p">Account</p>
                     </div>
-                    <div id="c1">
-                        <Link to={"setting_profile"}><a  className="link_edit">Edit Profile</a></Link>
+                    <div id="c1" onClick={To_Profile}>
+                        <Link className="link_edit">Edit Profile</Link>
                     </div>
-                    <div id="c1">
-                        <Link to={"setting_pass"}><a  className="link_pass">Change Password</a></Link>
+                    <div id="c1" onClick={To_Password}>
+                        <Link className="link_pass">Change Password</Link>
                     </div>
                     <center>
                         <button id="button" onClick={fun_logout}>Log Out</button>

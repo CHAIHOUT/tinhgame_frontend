@@ -136,3 +136,39 @@
     outline: none;
     border: none;
 }
+
+@media only screen and (max-width: 600px ) {
+    #inbox_head{
+        height: 80px;
+    }
+    #inbox_body2{
+        width: 100%;
+        height: 925px;
+    }
+    #inbox_b{
+        width: 100%;
+    }
+    #box{
+        width: 90%;
+        margin: 15px;
+    }
+
+    #box_text{
+        font-size: 8px;
+    }
+    #box_text2{
+        font-size: 10px;
+    }
+
+    #pic{
+        width: 20%;
+    }
+    #box_body{
+        width: 60%;
+    }
+    #box_foot{
+        width: 20%;
+    }
+
+
+}

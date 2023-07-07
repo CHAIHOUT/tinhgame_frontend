@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './css/comment.css';
+// media
+import './css/media.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -223,6 +225,12 @@ export default function Comment({item,ViewUser,fun_getAllcomment}) {
         setmessage2(item.message);
     }
 
+    // Cancel Reply
+    const CloseReply=()=>{
+        handleclosepopup();
+        setmessage('');
+    }
+
     // Delete Comment & All reply in Comment
     const fun_DeleteComment=()=>{
         const Token = JSON.parse(localStorage.getItem("auth"));
@@ -423,7 +431,7 @@ export default function Comment({item,ViewUser,fun_getAllcomment}) {
                                 <div id='reply_ip_body'>
                                     <textarea value={message} onChange={e => setmessage(e.target.value)} id='reply'></textarea>
                                     <div id='reply_btn'>
-                                        <button onClick={handleclosepopup}>Cancel</button>
+                                        <button onClick={CloseReply}>Cancel</button>
                                         <button onClick={fun_reply}>Reply</button>
                                     </div>
                                 </div>

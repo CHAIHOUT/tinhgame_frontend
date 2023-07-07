@@ -14,12 +14,16 @@ export default function Inbox_box({item,getInboxByID}) {
     const[userDataInbox,setuserDataInbox] = useState([]);
     const[checkStatus,setcheckStatus] = useState('');
 
+    // Date
+    const[dateProduct,setdateProduct] = useState('');
+
     // Loading modal
     const[show2,setshow2]= useState(false);
     const handleshow2 = () => setshow2(true);
     const handleclose2 = () => setshow2(false);
 
     useEffect(()=>{
+        fun_getDateProduct(item.created_at)
         fun_getDataThatInbox();
     },[])
 
@@ -71,6 +75,16 @@ export default function Inbox_box({item,getInboxByID}) {
         }) 
     }
 
+    // Convert to Date Product
+    const fun_getDateProduct=()=>{
+        let date = item.created_at;
+        let temp = "";
+        for (let index = 0; index < 10; index++) {
+        temp = temp + date[index];
+        }
+        setdateProduct(temp)
+    }
+
   return (
     <div>
         <div onClick={handleshow2} id='inbox_b'>
@@ -90,7 +104,7 @@ export default function Inbox_box({item,getInboxByID}) {
                     </div>
                 </div>
                 <div id='box_foot'>
-                    <span id='box_text2'>{item.created_at}</span>
+                    <span id='box_text2'>{dateProduct}</span>
                 </div>
             </div>
         </div>

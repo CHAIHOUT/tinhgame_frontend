@@ -61,3 +61,16 @@
     width: 100%;
     height: 40%;
 }
+
+@media only screen and (max-width: 600px ) {
+    #head_arrow svg{
+        width: 30px;
+    }
+    #head_p{
+        font-size: 15px;
+    }
+    #admin_product_mid{
+        grid-template-columns: repeat(1,1fr);
+        overflow-y: auto;
+    }
+}

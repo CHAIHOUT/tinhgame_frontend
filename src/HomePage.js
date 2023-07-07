@@ -149,9 +149,6 @@ export default function HomePage() {
                   })} */}
 
                   {
-                    // allProduct.map((item)=>{
-                    //   return <HomePageBox key={item.id} item={item} />
-                    // })
                     all? coc? gt? mlbb? <div></div>
                                 : allMlbb.map((item)=>{
                                   return <HomePageBox key={item.id} item={item} />

@@ -90,9 +90,9 @@ function Profile() {
         </div>
 
         <div className="link">
-          <Link to={"PostBtn"}><a id="post">My Post</a></Link>
-          <Link to={"Favorite_Blank"}><a id="favorite">Statistics</a></Link>
-          <Link to={"Setting"}><a id="setting">Setting</a></Link>
+          <Link to={"PostBtn"} id="post">My Post</Link>
+          <Link to={"Favorite_Blank"} id="favorite">Statistics</Link>
+          <Link to={"Setting"} id="setting">Setting</Link>
         </div>
 
         <div className="foot">

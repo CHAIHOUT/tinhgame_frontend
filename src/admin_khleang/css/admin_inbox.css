@@ -149,3 +149,25 @@
     outline: none;
     border: none;
 }
+
+@media only screen and (max-width: 600px ) {
+    #inbox_profile{
+        width: 20%;
+    }
+    #inbox_mid{
+        width: 80%;
+    }
+    #info{
+        font-size: 8px;
+    }
+    #mes_box{
+        font-size: 8px;
+    }
+    #box_foot{
+        width: 20%;
+    }
+    #box_foot button{
+        width: 100%;
+        font-size: 8px;
+    }
+}

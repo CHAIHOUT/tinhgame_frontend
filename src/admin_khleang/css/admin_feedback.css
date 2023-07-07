@@ -49,3 +49,12 @@
     padding: 10px;
     background-color: #152a52;
 }
+
+@media only screen and (max-width: 600px ) {
+    #box_text3{
+        font-size: 10px;
+    }
+    #f_textarea{
+        font-size: 10px;
+    }
+}

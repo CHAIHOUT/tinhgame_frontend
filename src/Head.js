@@ -22,7 +22,11 @@ export default function Head() {
 
   //Direct to Home Admin
   const DirectToAdmin=()=>{
-    navigate('/Admin');
+    if(!localStorage.getItem('admin')){
+
+    }else{
+      navigate('/Admin');
+    }
   }
 
   // Select Type
@@ -82,13 +86,13 @@ export default function Head() {
 
           <div className="search">
             <form action="" className="list">
-              <select value={selectType} onChange={e=>setselectType(e.target.value)} className="dropdown">
+              <select id='select' value={selectType} onChange={e=>setselectType(e.target.value)} className="dropdown">
                 <option selected value="" >All Type</option>
                 <option value="Clash Of Clan">Clash Of Clan</option>
                 <option value="Growtopia">Growtopia</option>
                 <option value="Mobile Legend">Mobile Legend</option>
               </select>
-              <input onClick={e=>fun_submitSelectType(e)} type="submit" className="head_btn" value="Search" />
+              <input id='search' onClick={e=>fun_submitSelectType(e)} type="submit" className="head_btn" value="Search" />
             </form>
           </div>
 
@@ -100,9 +104,7 @@ export default function Head() {
           </div>
           <div className="post">
             <Link to={"/post"}>           {/*  ./post  =  /homepage/post  tor router jas*/}
-              <a href="" >
                 <button >Post</button>
-              </a>
             </Link>
           </div>
         </div>

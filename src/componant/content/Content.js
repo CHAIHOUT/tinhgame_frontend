@@ -189,7 +189,7 @@ export default function Content() {
                         </div>
                         {/* Carasoul Slide*/}
                         <div id='c_slide'>
-                            {isloading?<ClipLoader color={'white'} cssOverride={override} loading={isloading} size={150} aria-label="Loading Spinner" data-testid="loader"/>
+                            {isloading?<ClipLoader id='c_spiner' color={'white'}  loading={isloading} size={150} aria-label="Loading Spinner" data-testid="loader"/>
                                 :<Carousel key={User.id} Photo={Photo}/>
                             }
                         </div>

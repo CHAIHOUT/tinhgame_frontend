@@ -124,3 +124,15 @@
     overflow: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+@media only screen and (max-width: 600px ) {
+    #stat_total{
+        font-size: 15px;
+    }
+    #stat_total2{
+        font-size: 15px;
+    }
+    #temp{
+        font-size: 15px;
+    }
+}

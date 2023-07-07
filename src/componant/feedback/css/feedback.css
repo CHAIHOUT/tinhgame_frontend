@@ -55,3 +55,13 @@
     justify-content: center;
     align-items: center;
 }
+
+@media only screen and (max-width: 600px ) {
+    #feedback_body{
+        width: 100%;
+        height: 850px;
+    }
+    #feedback_box{
+        width: 50%;
+    }
+}

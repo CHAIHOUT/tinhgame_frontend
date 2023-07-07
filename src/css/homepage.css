@@ -275,3 +275,14 @@
 #home_footer #home_footer_text{
     color: white;
 }
+
+@media only screen and (max-width: 600px ) {
+    #home_title{
+        margin-bottom: 15px;
+    }
+    #home_title b{
+        font-size: 10px;
+    }
+
+    
+}

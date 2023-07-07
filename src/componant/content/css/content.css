@@ -186,6 +186,7 @@
     padding: 5px;
     resize: none;
     outline: none;
+    overflow-x: auto;
     border-radius: 10px 0 0 10px;
     background-color: rgb(234, 234, 234);
     border-left: 2px solid white;
@@ -328,4 +329,72 @@
 }
 #info_text{
     color: white;
+}
+
+
+#c_spiner{
+    margin: 200px 255px;
+    width: 100px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 600px ) {
+    #content_body{
+        width: 100%;
+    }
+    #c_back{
+        width: 100%;
+    }
+        #back_block{
+            padding-left: 20px;
+        }
+
+    /* block 1 */
+    #content{
+        width: 100%;
+    }
+    #noted{
+        font-size: 10px;
+    }
+
+    /* Block 2 */
+    #pic_type{
+        height: 30%;
+    }
+        #c_info{
+            padding: 0;
+        }
+        #c_btn{
+            width: 100%;
+        }
+        #mid_text{
+            font-size: 10px;
+        }
+        
+        #info_text{
+            font-size: 10px;
+        }
+    
+    #c_spiner{
+        margin: 0;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* commnet */
+    #user_profile{
+        width: 20%;
+    }
+    #ip{
+        width: 80%;
+    }
+        #ip textarea{
+            width: 80%;
+        }
+        #ip #ip_btn{
+            width: 20%;
+        }
+    #c_btn{
+        font-size: 15px
+    }
 }

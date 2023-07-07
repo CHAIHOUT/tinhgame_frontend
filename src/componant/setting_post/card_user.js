@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './css/postBtn.css';
+import { Routes , Route , useNavigate } from "react-router-dom";
 
 // modal
 import { Button, Modal } from 'react-bootstrap';
@@ -21,6 +22,8 @@ export default function Card_user({item,fun_getProductUser}) {
   const[type,settype] = useState(item.type);
 
   const[img_type,setimg_type] = useState("");
+
+  const navigate = useNavigate();
 
   // modal Delete
   const[show,setshow]= useState();
@@ -128,6 +131,11 @@ export default function Card_user({item,fun_getProductUser}) {
     })
   }
 
+  // Check
+  const Check=()=>{
+    navigate('/content/'+item.id);
+  }
+
   return (
     <div>
         <div className="card">
@@ -140,9 +148,9 @@ export default function Card_user({item,fun_getProductUser}) {
                   <div className="card-title2">Value : {item.value}</div>
                 </div>
                 <div className="card-text">Description : {item.description}</div>
-                <button className="btn btn-outline-primary">Check</button>
+                <button onClick={Check} id='b_btn' className="btn btn-outline-primary">Check</button>
                 <button onClick={handleshow2} id='mid_btn' className="btn btn-outline-warning">Update</button>
-                <button onClick={handleshow} className="btn btn-outline-danger">Delete</button>
+                <button onClick={handleshow} id='b_btn' className="btn btn-outline-danger">Delete</button>
                 <button onClick={handleshow3} id='b_btn' class="btn btn-outline-secondary">Refund</button>
             </div>
 

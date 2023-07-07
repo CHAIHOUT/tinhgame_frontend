@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, redirect , useNavigate } from "react-router-dom";
 import './css/coc.css';
 import '../css/post.css'
+import '../mediaQuery/post_Media.css';
 
 // React-Icon
 import {FcCustomerSupport} from 'react-icons/fc';
@@ -25,6 +26,9 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 import { Button, Modal } from 'react-bootstrap';
 
 export default function Coc({type}) {
+
+    // product
+    const[lenProduct,setlenProduct] = useState([]); 
 
     // Direct
     const navigate = useNavigate();
@@ -67,6 +71,7 @@ export default function Coc({type}) {
     }
 
     useEffect(()=>{
+        fun_getlenproduct();
         if(!getUrl){
             listAll(imageListRef).then((response)=>{
                 response.items.forEach((item)=>{
@@ -103,37 +108,50 @@ export default function Coc({type}) {
     // Post btn
     const btn_post=(e)=>{
         e.preventDefault();
-        if(title != "" && description != "" && value !== "" && email != "" && email_password != "" && imageList != "" ){
-            e.preventDefault();
-            handleshow2();
+        if(lenProduct.length <= 6){
+            if(title != "" && description != "" && value !== "" && email != "" && email_password != "" && imageList != "" ){
+                e.preventDefault();
+                handleshow2();
+        
+                const data = {title,description,value,email,email_password,type};
+                const Token = JSON.parse(localStorage.getItem("auth"));
     
-            const data = {title,description,value,email,email_password,type};
-            const Token = JSON.parse(localStorage.getItem("auth"));
-
-            axios.post('http://127.0.0.1:8000/api/approved',data,{
-                headers:{
-                    "Authorization" : "Bearer "+Token.token,
-                }
-            }).then((Data)=>{
-                imageList.map((val,i)=>{
-                    const product_id = Data.data.id;
-                    const image = val;
-                    const data_url={image,product_id}  //Obj => can input image cant put rare image
-                    axios.post('http://127.0.0.1:8000/api/approved_photo',data_url,{
-                        headers:{
-                            "Authorization" : "Bearer "+Token.token,
-                        }
-                    })
+                axios.post('http://127.0.0.1:8000/api/approved',data,{
+                    headers:{
+                        "Authorization" : "Bearer "+Token.token,
+                    }
+                }).then((Data)=>{
+                    imageList.map((val,i)=>{
+                        const product_id = Data.data.id;
+                        const image = val;
+                        const data_url={image,product_id}  //Obj => can input image cant put rare image
+                        axios.post('http://127.0.0.1:8000/api/approved_photo',data_url,{
+                            headers:{
+                                "Authorization" : "Bearer "+Token.token,
+                            }
+                        })
+                    });
+                }).then((Data)=>{
+                    setTimeout(() => {
+                        handleclose2();
+                        Direct();
+                    }, 1500);
                 });
-            }).then((Data)=>{
-                setTimeout(() => {
-                    handleclose2();
-                    Direct();
-                }, 1500);
-            });
-    
+        
+            }else{
+                toast.warn('Please Insert All Form...!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            }
         }else{
-            toast.warn('Please Insert All Form...!', {
+            toast.warn('Sorry you have reach limit 6 product please delete 1 or more product to continue post ...!', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -142,7 +160,7 @@ export default function Coc({type}) {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-            });
+            });        
         }
     }
 
@@ -151,10 +169,22 @@ export default function Coc({type}) {
     const handleshow2 = () => setshow2(true);
     const handleclose2 = () => setshow2(false);
 
+    // get len product
+    const fun_getlenproduct=()=>{
+        const Token = JSON.parse(localStorage.getItem("auth"));
+        console.log(Token.user.id)
+        axios.get('http://127.0.0.1:8000/api/getproductbyidall/'+Token.user.id,{
+            headers:{
+                "Authorization" : "Bearer "+Token.token,
+            }
+        }).then((dataproduct)=>{
+            setlenProduct(dataproduct.data)
+        })
+    }
+
   return (
     <div>
         <form className='form_type_game'>
-
             <hr size="5" color='black' />
             <h4>Post : Clash Of Clan</h4>
 

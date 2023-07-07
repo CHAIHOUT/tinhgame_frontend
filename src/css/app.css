@@ -185,5 +185,108 @@ main{
 /*  hover  */
 
 
+@media only screen and (max-width: 600px ) {
+    .p_head{
+        width: 100%;
+    }
+    .logo{
+        width: 50px;
+        height: 50px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .logo img{
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+    .list{
+        width: 160px;
+    }
+    .search{
+        width: 130px;
+    }
+    #select{
+        width: 65px;
+    }
+    #search{
+        width: 65px;
+    }
 
+    .icon{
+        width: 120px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+        .global{
+            width: 20px;
+            height: 20px;
+        }
+        .global svg{
+            width: 20px;
+            height: 20px;
+        }
+        .profile{
+            width: 20px;
+            height: 20px;           
+        }
+        .profile svg{
+            width: 20px;
+            height: 20px;           
+        }
+        .inbox{
+            width: 20px;
+            height: 20px;
+        }
+        .inbox svg{
+            width: 20px;
+            height: 20px;
+        }
+        #icon_mid{
+            width: 20px;
+            height: 20px;
+            margin: 0px;
+        }
+        #icon_mid svg{
+            width: 20px;
+            height: 20px;
+            margin: 0px;
+        }
+
+    .post{
+        width: 90px;
+    }
+    .post a{
+        width: 90px;
+    }
+    .post button{
+        width: 70px;
+        height: 30px;
+        margin: 0;
+    }
+
+    /* profile */
+    .p_body{
+        width: 100%;
+    }
+    .p_body_info{
+        width: 70%;
+    }
+    .link a{
+        width: 33.33%;
+    }
+    .foot{
+        width: 100%;
+    }
+    .pic{
+        width: 50%;
+    }
+    #pic_profile{
+        width: 90%;
+    }
+    .info{
+        width: 50%;
+        margin: 0;
+    }
+}
 
