@@ -45,7 +45,31 @@ export default function Admin_feedback_card({item,fun_getAllFeedback}) {
           temp = temp + date[index];
       }
       setdateProduct(temp)
-  }
+    }
+
+    const fun_deleteFeedback=()=>{
+      const Token = JSON.parse(localStorage.getItem("auth"));
+      axios.delete('http://127.0.0.1:8000/api/feedback/'+item.id,{
+          headers:{
+            "Authorization" : "Bearer "+Token.token,
+          }
+      }).then(()=>{
+          toast.success('Delete Success', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          setTimeout(() => {            
+              fun_getAllFeedback();
+              handleclose2();
+          }, 1000);
+      })
+    }
 
   return (
     <div>
@@ -88,7 +112,7 @@ export default function Admin_feedback_card({item,fun_getAllFeedback}) {
               </Modal.Body>
               <Modal.Footer>
                 <Button onClick={handleclose2}>Close</Button>
-                <Button >Delete</Button>
+                <Button onClick={fun_deleteFeedback}>Delete</Button>
               </Modal.Footer>
             </Modal>
 
