@@ -36,6 +36,14 @@ export default function Admin_inbox() {
 
   return (
     <div id='inbox_body'>
+        <div id='inbox_head'>
+            {/* <div id='head_left'>
+                <Link to='/'><BsArrowReturnLeft size='50'/></Link>
+            </div> */}
+            <div id='head_right'>
+                <span id='span2'>APPROVE</span>
+            </div>
+        </div>
         {
             DataApprove.map((item)=>{
                 return <Inbox_card key={item.id} item={item} deleteUI={deleteUI} fun_getDataApprove={fun_getDataApprove}></Inbox_card>

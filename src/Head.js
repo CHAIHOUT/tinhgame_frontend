@@ -61,7 +61,11 @@ export default function Head() {
 
   const fun_submitSelectType=(e)=>{
     e.preventDefault();
-    if(selectType == 'Clash Of Clan'){
+    if(selectType == 'All Type'){
+      localStorage.setItem('all',1);
+      Direct();
+    }
+    else if(selectType == 'Clash Of Clan'){
       localStorage.setItem('coc',1);
       Direct();
     }else if(selectType == 'Growtopia'){
@@ -69,6 +73,12 @@ export default function Head() {
       Direct();
     }else if(selectType == 'Mobile Legend'){
       localStorage.setItem('mlbb',1);
+      Direct();
+    }else if(selectType == 'Pubg Mobile'){
+      localStorage.setItem('pubg',1);
+      Direct();
+    }else if(selectType == 'Free Fire'){
+      localStorage.setItem('freefire',1);
       Direct();
     }else if(selectType == ''){
         // Nothing
@@ -87,10 +97,13 @@ export default function Head() {
           <div className="search">
             <form action="" className="list">
               <select id='select' value={selectType} onChange={e=>setselectType(e.target.value)} className="dropdown">
-                <option selected value="" >All Type</option>
+                <option selected >Select</option>
+                <option value="All Type">All Type</option>
                 <option value="Clash Of Clan">Clash Of Clan</option>
                 <option value="Growtopia">Growtopia</option>
                 <option value="Mobile Legend">Mobile Legend</option>
+                <option value="Pubg Mobile">Pubg Mobile</option>
+                <option value="Free Fire">Free Fire</option>
               </select>
               <input id='search' onClick={e=>fun_submitSelectType(e)} type="submit" className="head_btn" value="Search" />
             </form>

@@ -25,18 +25,24 @@ export default function HomePage() {
   const[coc,setcoc] = useState(false);
   const[gt,setgt] = useState(false);
   const[mlbb,setmlbb] = useState(false);
+  const[pubg,setpubg] = useState(false);
+  const[freefire,setfreefire] = useState(false);
 
   // get approve product to show
   const[allProduct,setallProduct] = useState([]);
   const[allCoc,setallCoc] = useState([]);
   const[allGt,setallGt] = useState([]);
   const[allMlbb,setallMlbb] = useState([]);
+  const[allPubg,setallPubg] = useState([]);
+  const[allFreefire,setallFreefire] = useState([]);
 
   useEffect(()=>{
     fun_getAllProduct();
     fun_getAllCoc();
     fun_getAllGt();
     fun_getAllMlbb();
+    fun_getAllPubg();
+    fun_getAllFreefire();
 
     fun_checkSelectType();
   },[]);
@@ -70,7 +76,23 @@ export default function HomePage() {
     axios.get('http://localhost:8000/api/getproductbytype/'+type).then((DataMlbb)=>{
       setallMlbb(DataMlbb.data);
     });
-  }  
+  }
+  
+  // all Pubg
+  const fun_getAllPubg=()=>{
+    let type = "Pubg Mobile";
+    axios.get('http://localhost:8000/api/getproductbytype/'+type).then((DataPubg)=>{
+      setallPubg(DataPubg.data);
+    });
+  }
+
+  // all Free Fire
+  const fun_getAllFreefire=()=>{
+    let type = "Free Fire";
+    axios.get('http://localhost:8000/api/getproductbytype/'+type).then((DataFreefire)=>{
+      setallFreefire(DataFreefire.data);
+    });
+  }
 
   // swtich to Type
   const getAllType=()=>{
@@ -95,6 +117,23 @@ export default function HomePage() {
     setmlbb(false);
   }
 
+  const getAllPubg =()=>{
+    setall(true);
+    setcoc(true);
+    setgt(true);
+    setmlbb(true);
+    setpubg(false);
+  }
+
+  const getAllFreefire =()=>{
+    setall(true);
+    setcoc(true);
+    setgt(true);
+    setmlbb(true);
+    setpubg(true);
+    setfreefire(false);
+  }
+
   // Check Select Type
   const fun_checkSelectType=()=>{
     if(localStorage.getItem('coc')){
@@ -106,6 +145,15 @@ export default function HomePage() {
     }else if(localStorage.getItem('mlbb')){
       getAllMlbb();
       localStorage.removeItem('mlbb');
+    }else if(localStorage.getItem('pubg')){
+      getAllPubg();
+      localStorage.removeItem('pubg');
+    }else if(localStorage.getItem('freefire')){
+      getAllFreefire();
+      localStorage.removeItem('freefire');
+    }else if(localStorage.getItem('all')){
+      getAllType();
+      localStorage.removeItem('all');
     }
   }
 
@@ -119,7 +167,7 @@ export default function HomePage() {
             <div id='home_body2'>
                 {/* banner */}
                 <div id='home_banner'>
-
+                  
                 </div>
                 {/* title */}
                 <div id='home_title'>
@@ -132,24 +180,20 @@ export default function HomePage() {
                     <a id='alltype' onClick={getAllType}><div id='alltype_color'><p>All Type</p></div></a>  {/*<FcTodoList/> All Type*/}
                     <a id='coc' onClick={getAllCoc}><div id='coc_color'><p>Clash Of Clan</p></div></a>               {/*<FcCollaboration/> Clash Of Clan*/}
                     <a id='gt' onClick={getAllGt}><div id='gt_color'><p>Growtopia</p></div></a>           {/*<FaBirthdayCake color='yellow'/> Growtopia*/}
-                    <a id='mlbb' onClick={getAllMlbb}><div id='mlbb_color'><p>Mobile Legend</p></div></a>               {/*<FcCollaboration/> Mobile Legend*/}
+                    <a id='mlbb' onClick={getAllMlbb}><div id='mlbb_color'><p>Mobile Legend</p></div></a>
+                    <a id='pubg' onClick={getAllPubg}><div id='pubg_color'><p>Pubg Mobile</p></div></a>
+                    <a id='freefire' onClick={getAllFreefire}><div id='freefire_color'><p>Free Fire</p></div></a>                 {/*<FcCollaboration/> Mobile Legend*/}
                 </div>
                 <div id='home_content'>               {/* if bir ture (web true => bir , web false => wed ) , if bir false => Alldata */}
-                  {/* {Bir?Wed?                           
-                  
-                  birthday.map((item)=>{
-                    return  <Post_content key={item.id} item={item} />             
-                  })
-                  :wedding.map((item)=>{
-                    return  <Post_content key={item.id} item={item} />             
-                  })
-                  
-                  :Alldata.map((item)=>{
-                    return  <Post_content key={item.id} item={item} />             
-                  })} */}
 
                   {
-                    all? coc? gt? mlbb? <div></div>
+                    all? coc? gt? mlbb? pubg? freefire? <div></div>
+                                        : allFreefire.map((item)=>{ 
+                                          return <HomePageBox key={item.id} item={item}/>
+                                        })
+                                    : allPubg.map((item)=>{ 
+                                      return <HomePageBox key={item.id} item={item}/>
+                                    })
                                 : allMlbb.map((item)=>{
                                   return <HomePageBox key={item.id} item={item} />
                                 })
@@ -165,13 +209,13 @@ export default function HomePage() {
                   }
 
                 </div>
+                {/* Footer */}
+                <div id="home_footer">
+                  <div id='home_footer_text'>TinhGame - ទិញហ្គេម</div>
+                </div>
             </div>
         </div>
         
-        {/* Footer */}
-        <div id="home_footer">
-          <div id='home_footer_text'>TinhGame - ទិញហ្គេម</div>
-        </div>
 
 
 

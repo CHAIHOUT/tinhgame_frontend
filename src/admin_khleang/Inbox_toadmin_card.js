@@ -62,6 +62,10 @@ export default function Inbox_toadmin_card({item,fun_getAllInbox_toadmin}) {
             settypeImg('../../../../img/gt.jpg');
         }else if(item.type == 'Mobile Legend'){
             settypeImg('../../../../img/mlbb.jpg');
+        }else if(item.type == 'Pubg Mobile'){
+            settypeImg('../../../../img/pubg.jpg');
+        }else if(item.type == 'Free Fire'){
+            settypeImg('../../../../img/freefire.jpg');
         }
     }
 

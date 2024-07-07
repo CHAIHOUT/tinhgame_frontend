@@ -3,13 +3,13 @@
     height: 745px;
 }
 #admin_body_left{
-    width: 6%;
+    width: 13%;
     float: left;
     height: 100%;
-    background-color: black;
+    background-color: #ECF0F1;
 }
 #admin_body_right{
-    width: 94%;
+    width: 87%;
     float: left;
     height: 100%;
     /* background-color: yellow; */
@@ -18,15 +18,33 @@
 
 #left_box{
     width: 100%;
-    height: 70px;
+    height: 65px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
 }
+#left_box:hover{
+    background-color: rgba(42, 41, 45, 0.037);
+    border-left: 3px solid rgba(44, 44, 46, 0.551);
+}
+#left_box a{
+    display: flex;
+    align-items: center;
+    color: #34495E;
+    margin-left: 5px;
+}
+#admin_qty{
+    color: red;
+}
+#admin_font{
+    margin: 0 5px;
+}
+
 #left_box #left_box_logo{
-    width: 100%;
     height: 100%;
+    width: 90px;
+    margin: 0 40px;
 }
 
 

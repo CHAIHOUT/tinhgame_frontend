@@ -1,5 +1,16 @@
 {
   "projects": {
     "default": "tinhgame-95938"
-  }
+  },
+  "targets": {
+    "tinhgame-95938": {
+      "hosting": {
+        "app": [
+          "https://tinhgame-95938.web.app/"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

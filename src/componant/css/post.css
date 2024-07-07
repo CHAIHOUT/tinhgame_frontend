@@ -1,13 +1,13 @@
 main{
   margin: 0;
-  background: #0F1E39;
+  background: white;
   height: 1150px;
 }
 .post_body {
     margin: auto;
     width: 70%;
-    height: 980px;
-    background-color: white;
+    height: 1000px;
+    background-color: #ECF0F1;
     margin-top: 25px;
   }
   .post_body #head_post_body {
@@ -58,11 +58,16 @@ main{
   }
   #form_title #title_post{
     float: left;
-    width: 35%;
+    width: 25%;
   } 
   #form_title #title_note{
     float: left;
-    width: 65%;
+    width: 70%;
+    border: 2px solid black;
+    color: red;
+    font-weight:500;
+    border-radius: 5px;
+    padding: 10px;
   }
   #form_title #title_note p{
     margin: 0;
@@ -80,6 +85,8 @@ main{
   .post_body .post_form #button {
     width: 100%;
     display: flex;
+    background-color: #ECF0F1;
+    border: 2px solid #ECF0F1;
     justify-content: center;
   }
   .post_body .post_form #button #post_button {
@@ -90,6 +97,11 @@ main{
     color: white;
     border-radius: 10px;
   }
+
+/* Modify bootstrap */
+.form-select{
+  width: 200px;
+}
 
 @media only screen and (max-width: 600px ) {
   #title_note p{

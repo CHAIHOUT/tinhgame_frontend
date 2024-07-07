@@ -27,7 +27,7 @@ export default function Admin_BuyProduct() {
     <div id='inbox_body3'>
         <div id='inbox_head'>
             <div id='head_right'>
-                <span id='span2'>BUYER PRODUCT</span>
+                <span id='span2'>ORDER PRODUCT</span>
             </div>
         </div>
 

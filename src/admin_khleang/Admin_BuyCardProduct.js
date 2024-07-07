@@ -32,6 +32,10 @@ export default function Admin_BuyCardProduct({item,fun_getAllBuyProduct}) {
             setTypeProduct('../../img/gt.jpg');
         }else if(item.type == "Mobile Legend"){
             setTypeProduct('../../img/mlbb.jpg');
+        }else if(item.type == "Pubg Mobile"){
+            setTypeProduct('../../img/pubg.jpg');
+        }else if(item.type == "Free Fire"){
+            setTypeProduct('../../img/freefire.jpg');
         }
     }
 

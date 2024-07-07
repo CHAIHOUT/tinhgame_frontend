@@ -46,6 +46,10 @@ export default function Admin_product_card({item,fun_product}) {
         setimg_type("../../img/gt.jpg");
         }else if(item.type == 'Mobile Legend'){
         setimg_type("../../img/mlbb.jpg");
+        }else if(item.type == 'Pubg Mobile'){
+        setimg_type("../../img/pubg.jpg");
+        }else if(item.type == 'Free Fire'){
+        setimg_type("../../img/freefire.jpg");
         }
     }
 

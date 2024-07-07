@@ -9,6 +9,8 @@ import Head from '../Head';
 import Coc from './account_type/Coc';
 import Gt from './account_type/Gt';
 import Mlbb from './account_type/Mlbb';
+import Pubg from './account_type/Pubg';
+import Freefire from './account_type/Freefire';
 import Plz_select from './account_type/Plz_select';
 
 //firebase
@@ -24,6 +26,8 @@ function Post() {
     const[a,seta] = useState(false);
     const[b,setb] = useState(false);
     const[c,setc] = useState(false);
+    const[d,setd] = useState(false);
+    const[e,sete] = useState(false);
     const [selectService,setselectService] = useState(" ");
     
     const fun_type=(value)=>{
@@ -44,6 +48,20 @@ function Post() {
             seta(true)
             setb(true)
             setc(true)
+            setd(false)
+        }else if(value=="Pubg Mobile"){
+            seta(true)
+            setb(true)
+            setc(true)
+            setd(true)
+            sete(false)
+        }
+        else if(value=="Free Fire"){
+            seta(true)
+            setb(true)
+            setc(true)
+            setd(true)
+            sete(true)
         }
     }
 
@@ -69,20 +87,24 @@ function Post() {
                     <div  id='form_title'>
                         <div id='title_post'><p>Type of game Account :</p></div>
                         <div id='title_note'>
-                            <p>**Noted** : All the product that you sold will pay tax 20% to Company</p>
-                            <p>**Noted** : The product that you post will approved by our Company</p>
-                            <p>**Noted** : Your product will be change by our Company to sell and you can refund</p>
+                            <p>* Noted : All the product that you sold will pay tax 20% to Company</p>
+                            <p>* Noted : The product that you post will approved by our Company</p>
+                            <p>* Noted : Your product will be change by our Company to sell and you can refund</p>
                         </div>
                     </div>
-                    <select id="post_box" value={selectService} onChange={(e) => {setselectService(e.target.value);fun_type(e.target.value)}} >
+                    <select class="form-select" value={selectService} onChange={(e) => {setselectService(e.target.value);fun_type(e.target.value)}} aria-label="Disabled select example">
                         <option selected>Select Type Account</option>
                         <option >Clash Of Clan</option>
                         <option >Growtopia</option>
                         <option >Mobile Legend</option>
+                        <option >Pubg Mobile</option>
+                        <option >Free Fire</option>
                     </select>
                     <div id='post_type_body'>
                         {
-                            a?b?c?<Mlbb type={selectService}/>
+                            a?b?c?d?e?<Freefire type={selectService}/>
+                                            :<Pubg type={selectService}/>
+                                        :<Mlbb type={selectService}/>
                                     :<Gt type={selectService}/>
                                 :<Coc type={selectService}/>
                             :<Plz_select/>

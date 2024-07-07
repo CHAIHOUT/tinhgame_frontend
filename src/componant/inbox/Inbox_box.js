@@ -90,7 +90,7 @@ export default function Inbox_box({item,getInboxByID}) {
         <div onClick={handleshow2} id='inbox_b'>
             <div id='box'>
                 <div id='pic'>
-                    <img src='../../../../img/g.jpg' />
+                    <img src='../../../../img/user3.png' />
                 </div>
                 <div id='box_body'>
                     <div id='up'>

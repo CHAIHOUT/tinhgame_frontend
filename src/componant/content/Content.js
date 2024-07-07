@@ -17,7 +17,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 //Modal
 import { Button, Modal } from 'react-bootstrap';
 
-import Head from '../../Head';
+import Head from '../../Head.js';
 import Carousel from './Carousel';
 import Comment from '../comment/Comment';
 
@@ -110,6 +110,10 @@ export default function Content() {
             setTypeProduct('../../../img/gt.jpg');
         }else if(type == "Mobile Legend"){
             setTypeProduct('../../../img/mlbb.jpg');
+        }else if(type == "Pubg Mobile"){
+            setTypeProduct('../../../img/pubg.jpg');
+        }else if(type == "Free Fire"){
+            setTypeProduct('../../../img/freefire.jpg');
         }
     }
 
@@ -197,7 +201,7 @@ export default function Content() {
                         <div id='c_description'>
                             <div id='title_description'>
                                 <span id='mid_text_title'>Description</span>
-                                <hr size="6" color='white'/>
+                                <hr size="6" color='black'/>
                             </div>
                             <div id='description'>
                             <span id='mid_text'>{Product.description}</span>
@@ -207,7 +211,7 @@ export default function Content() {
                         {/* Comment */}
                         <div id='comment_body'>
                             <div id='pic_comment'>
-                                <AiOutlineComment  size={30} color='white'/>
+                                <AiOutlineComment  size={30} color='black'/>
                                 <span id='mid_text_title'>Comment</span>
                             </div>
                             <div id='comment'>
@@ -236,7 +240,7 @@ export default function Content() {
                         <div id='c_noted'>
                             <div id='title_noted'>
                                 <span id='mid_text_title'>Noted</span>
-                                <hr size="6" color='white'/>
+                                <hr size="6" color='black'/>
                             </div>
                             <div id='noted'>
                                *** Please Comment to Accept the price with the owner before click buy now ! ***  
@@ -257,7 +261,7 @@ export default function Content() {
                                 <div id='c_value'>
                                     <span id='info_text'>{Product.value}</span>
                                 </div>
-                                <button onClick={handleshow} id='c_btn'>BUY NOW</button>
+                                <button onClick={handleshow} id='c_btn'>ORDER NOW</button>
                                 <div id='owner_info'>
                                     <div id='info_left'>
                                         <div id='c_left_box'>

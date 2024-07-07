@@ -17,7 +17,7 @@
     margin: 0;
 }
 .container .row .col-3{
-    background-color: #dadfe0;
+    background-color: #ECF0F1;
     height: 100%;
     width: 25%;
     float: left;
@@ -65,7 +65,7 @@
 }
 a{
     text-decoration: none;
-    color: 	#34495E;
+    color: #3a3a3a;
 }
 #button{
     margin-top: 20px;

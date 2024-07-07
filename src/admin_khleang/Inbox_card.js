@@ -59,6 +59,10 @@ export default function Inbox_card({item,deleteUI,fun_getDataApprove}) {
             setimg_type("../img/gt.jpg");
         }else if(item.type == 'Mobile Legend'){
             setimg_type("../img/mlbb.jpg");
+        }else if(item.type == 'Pubg Mobile'){
+            setimg_type("../img/pubg.jpg");
+        }else if(item.type == 'Free Fire'){
+            setimg_type("../img/freefire.jpg");
         }
     }
 

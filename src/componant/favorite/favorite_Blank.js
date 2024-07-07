@@ -95,7 +95,7 @@ function FavoriteBlank() {
 
         {/* Col 2 */}
         <div id='stat_box'>
-          <div id='stat_box_col' className='col2_bg'>
+          <div id='stat_box_col' className='col1_bg'>
             {/* left */}
             <div id='stat_left'>
               <div id='left_head'>
@@ -120,7 +120,7 @@ function FavoriteBlank() {
 
         {/* Col 3 */}
         <div id='stat_box'>
-          <div id='stat_box_col' className='col3_bg'>
+          <div id='stat_box_col' className='col1_bg'>
             {/* left */}
             <div id='stat_left'>
               <div id='left_head'>
@@ -145,16 +145,16 @@ function FavoriteBlank() {
 
         {/* Col 4 */}
         <div id='stat_box'>
-          <div id='stat_box_col' className='col4_bg'>
+          <div id='stat_box_col' className='col1_bg'>
             {/* left */}
             <div id='stat_left'>
               <div id='left_head'>
                 <div id='stat_total'>Total</div>
                 <div id='stat_total'>Sold Value</div>
               </div>
-              <div id='left_body2'>
-                <div id='temp'>
-                  {totalvalue}
+              <div id='left_body'>
+                <div id='stat_total'>
+                  {totalvalue ? totalvalue : "0"}
                 </div>
               </div>
             </div>

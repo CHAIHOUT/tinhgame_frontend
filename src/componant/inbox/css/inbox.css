@@ -1,7 +1,7 @@
 #inbox_body2{
     width: 1433px;
     height: 745px;
-    background-color: #0F1E39;
+    background-color: white;
 }
 
 /* head */
@@ -27,7 +27,7 @@
 }
 #head_right #span{
     margin-left: 10px;
-    color: white;
+    color: black;
     opacity: 50%;
     font-size: 30px;
     font-family:'Times New Roman', Times, serif;

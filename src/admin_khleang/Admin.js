@@ -106,11 +106,11 @@ export default function Admin() {
     <div id='admin_body'>
         <div id='admin_body_left'>
             <div id='left_box'><img onClick={DirectLogin} id='left_box_logo' src='../../../img/tg_logo4_nobg.png' /></div>
-            <div id='left_box'><Link to='Admin_home' className='a_margin'><BiHomeAlt2 size="30" color='white'/></Link></div>
-            <div id='left_box'><Link id='a_inbox' to='Admin_inbox'><MdOutlineForwardToInbox size="30" color='white'/>{lenApprove.length}</Link></div>
-            <div id='left_box'><Link id='a_inbox' to='inbox_toadmin'><HiOutlineInboxIn size="35" color='white'/>{lenInboxtoadmin.length + DataFeedback.length}</Link></div>
-            <div id='left_box'><Link id='a_inbox' to='Admin_buyproduct'><MdOutlineProductionQuantityLimits size="30" color='white'/>{lenBuyProduct.length}</Link></div>
-            <div id='left_box'><Link id='a_inbox' className='a_margin' to='/refresh'><FiRefreshCcw size="30" color='white'/></Link></div>
+            <div id='left_box'><Link to='Admin_home' className='a_margin'><BiHomeAlt2 size="25" color='#34495E'/><div id='admin_font'>HOME</div></Link></div>
+            <div id='left_box'><Link id='a_inbox' to='Admin_inbox'><MdOutlineForwardToInbox size="25" color='#34495E'/> <div id='admin_font'>APPROVE</div> <div id='admin_qty'>{lenApprove.length}</div></Link></div>
+            <div id='left_box'><Link id='a_inbox' to='inbox_toadmin'><HiOutlineInboxIn size="25" color='#34495E'/> <div id='admin_font'>INBOX & REFUND</div> <div id='admin_qty'>{lenInboxtoadmin.length + DataFeedback.length}</div></Link></div>
+            <div id='left_box'><Link id='a_inbox' to='Admin_buyproduct'><MdOutlineProductionQuantityLimits size="25" color='#34495E'/><div id='admin_font'>ORDER</div> <div id='admin_qty'>{lenBuyProduct.length}</div></Link></div>
+            <div id='left_box'><Link id='a_inbox' className='a_margin' to='/refresh'><FiRefreshCcw size="25" color='#34495E'/> <div id='admin_font'>REFRESH</div></Link></div>
             <div id='left_box_logout'>
                 <button type="button" onClick={Logout} class="btn btn-outline-danger">Logout</button>
             </div>

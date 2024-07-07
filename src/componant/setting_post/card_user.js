@@ -52,6 +52,10 @@ export default function Card_user({item,fun_getProductUser}) {
       setimg_type("../img/gt.jpg");
     }else if(item.type == 'Mobile Legend'){
       setimg_type("../img/mlbb.jpg");
+    }else if(item.type == 'Pubg Mobile'){
+      setimg_type("../img/pubg.jpg");
+    }else if(item.type == 'Free Fire'){
+      setimg_type("../img/freefire.jpg");
     }
   }
 
@@ -115,7 +119,7 @@ export default function Card_user({item,fun_getProductUser}) {
           "Authorization" : "Bearer "+Token.token,
       }
     }).then(()=>{
-      toast.success('Refund Success Please wait for Admin Inbox', {
+      toast.success('Refund offer is Success Please wait for Admin Inbox', {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -147,10 +151,12 @@ export default function Card_user({item,fun_getProductUser}) {
                   <div className="card-title">Title : {item.title}</div>
                   <div className="card-title2">Value : {item.value}</div>
                 </div>
-                <div className="card-text">Description : {item.description}</div>
+                <div id='desc_body'>
+                  <div className="card-text">Description : {item.description}</div>
+                </div>
                 <button onClick={Check} id='b_btn' className="btn btn-outline-primary">Check</button>
                 <button onClick={handleshow2} id='mid_btn' className="btn btn-outline-warning">Update</button>
-                <button onClick={handleshow} id='b_btn' className="btn btn-outline-danger">Delete</button>
+                {/* <button onClick={handleshow} id='b_btn' className="btn btn-outline-danger">Delete</button> */}
                 <button onClick={handleshow3} id='b_btn' class="btn btn-outline-secondary">Refund</button>
             </div>
 
